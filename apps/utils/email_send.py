@@ -9,7 +9,7 @@ __author__ = 'mtianyan'
 __date__ = '2018/1/10 0010 20:47'
 from users.models import EmailVerifyRecord
 # 导入Django自带的邮件模块
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 # 导入setting中发送邮件的配置
 from Mxonline3.settings import EMAIL_FROM
 # 发送html格式的邮件:
@@ -56,8 +56,8 @@ def send_register_eamil(email, send_type="register"):
             "email_register.html",  # 需要渲染的html模板
             {
                 "active_code": code  # 参数
-                }
-            )
+            }
+        )
 
         msg = EmailMessage(email_title, email_body, EMAIL_FROM, [email])
         msg.content_subtype = "html"

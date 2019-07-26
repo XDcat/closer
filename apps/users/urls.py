@@ -1,5 +1,4 @@
 # encoding: utf-8
-import django
 
 from users.views import UserInfoView, UploadImageView, SendEmailCodeView, UpdateEmailView, UpdatePwdView, MyCourseView, \
     MyFavOrgView, MyFavTeacherView, MyFavCourseView, MyMessageView
@@ -8,6 +7,7 @@ __author__ = 'mtianyan'
 __date__ = '2018/1/14 0014 06:52'
 
 from django.urls import path
+
 app_name = "users"
 urlpatterns = [
     # 用户信息

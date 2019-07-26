@@ -183,8 +183,9 @@ class LoginView(View):
         # 没有成功说明里面的值是None，并再次跳转回主页面
         else:
             return render(
-                request, "login.html", {
-                    "login_form": login_form})
+                request,
+                "login.html",
+                {"login_form": login_form, 'msg': '用户名或密码错误，请重试。'})
 
 # Create your views here
 

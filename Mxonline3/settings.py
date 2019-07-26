@@ -92,9 +92,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline3',
-        'USER': 'root',
-        'PASSWORD': 'mtianyanroot',
-        'HOST': '127.0.0.1'
+        'USER': 'deqin',
+        'PASSWORD': 'JffxacnYLXdcDPL4',
+        'HOST': '132.232.30.57'
 
     }
 }
@@ -143,13 +143,17 @@ STATICFILES_DIRS = [
 ]
 
 # 发送邮件的setting设置
-
-EMAIL_HOST = "smtp.qq.com"
-EMAIL_PORT = 25
-EMAIL_HOST_USER = "mxonline@mtianyan.cn"
-EMAIL_HOST_PASSWORD = "ystfiwntwmonjebe"
-EMAIL_USE_TLS = True
-EMAIL_FROM = "mxonline@mtianyan.cn"
+# 发送邮件配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# smpt服务地址
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25   # 端口默认都是25不需要修改
+# 发送邮件的邮箱，需要配置开通SMTP
+EMAIL_HOST_USER = "514269236@qq.com"
+# 在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = "vazicugocoxzbgfg"
+# 收件人看到的发件人
+EMAIL_FROM = '514269236@qq.com'
 
 # 设置我们上传文件的路径
 
