@@ -138,7 +138,7 @@ class LoginView(View):
         # render就是渲染html返回用户
         # render三变量: request 模板名称 一个字典写明传给前端的值
         redirect_url = request.GET.get('next', '')
-        return render(request, "login.html", {
+        return render(request, "login-new.html", {
             "redirect_url": redirect_url
         })
 

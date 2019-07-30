@@ -1,0 +1,156 @@
+{% extends 'base-new.html' %}
+{% load staticfiles %}
+{% block titile %} Courses | Birdge {% endblock %}
+{% block kind %}courses-page{% endblock %}
+{% block subtitle %}Courses Online{% endblock %}
+{% block address %}Courses{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="featured-courses courses-wrap">
+            <div class="row mx-m-25">
+                {% for course in all_course.object_list %}
+                    <div class="col-12 col-md-6 px-25">
+                        <div class="course-content">
+                            {#                                图片#}
+                            <figure class="course-thumbnail">
+                                <a href="{% url 'course:course_detail' course.id %}">
+                                    <img width="340" height="210" class="scrollLoading"
+                                         src="{{ MEDIA_URL }}{{ course.image }}"/>
+                                </a>
+                            </figure><!-- .course-thumbnail -->
+                            {#                                文字#}
+                            <div class="course-content-wrap">
+                                <header class="entry-header">
+                                    <h2 class="entry-title"><a
+                                            href="{% url 'course:course_detail' course.id %}">{{ course.name }}</a>
+                                    </h2>
+
+                                    <div class="entry-meta flex flex-wrap align-items-center">
+                                        <div class="course-author"><a href="#">{{ course.teacher.name }} </a></div>
+
+                                        <div class="course-date">{{ course.category }}</div>
+                                    </div><!-- .course-date -->
+                                </header><!-- .entry-header -->
+
+                                <footer class="entry-footer flex flex-wrap justify-content-between align-items-center">
+                                    <div class="course-cost">
+                                        {{ course.learn_times }}H
+                                    </div><!-- .course-cost -->
+
+                                    <div class="course-ratings flex justify-content-end align-items-center">
+                                        <span class="course-ratings-count">{{ course.students }}人学习</span>
+                                    </div><!-- .course-ratings -->
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .course-content-wrap -->
+                        </div><!-- .course-content -->
+                    </div><!-- .col -->
+                {% endfor %}
+            </div><!-- .row -->
+        </div><!-- .featured-courses -->
+
+        <div class="pagination flex flex-wrap justify-content-between align-items-center">
+            <div class="col-12 col-lg-4 order-2 order-lg-1 mt-3 mt-lg-0">
+                <ul class="flex flex-wrap align-items-center order-2 order-lg-1 p-0 m-0">
+                    {% if all_course.has_previous %}
+                        <li class="long"><a href="?{{ all_course.previous_page_number.querystring }}"><</a>
+                        </li>
+                    {% endif %}
+                    {% for page in all_course.pages %}
+                        {% if page %}
+                            {% ifequal page all_course.number %}
+                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                            {% else %}
+                                <li><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                            {% endifequal %}
+                        {% else %}
+                            <li class="none"><a href="">...</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if all_course.has_next %}
+                        <li class="long"><a
+                                href="?{{ all_course.next_page_number.querystring }}"> > </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="col-12 flex justify-content-start justify-content-lg-end col-lg-8 order-1 order-lg-2">
+                <div class="pagination-results flex flex-wrap align-items-center">
+                    {#                        <p class="m-0">Showing 1–3 of 12 results</p>#}
+                    {##}
+                    {#                        <form>#}
+                    {#                            <select>#}
+                    {#                                <option>Show: 06</option>#}
+                    {#                                <option>Show: 12</option>#}
+                    {#                                <option>Show: 18</option>#}
+                    {#                                <option>Show: 24</option>#}
+                    {#                            </select>#}
+                    {#                        </form>#}
+                </div><!-- .pagination-results -->
+            </div>
+        </div><!-- .pagination -->
+    </div><!-- .col -->
+
+    <div class="col-12 col-lg-4">
+        <div class="sidebar">
+            <div class="search-widget">
+                <form class="flex flex-wrap align-items-center">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit" class="flex justify-content-center align-items-center"><i
+                            class="fa fa-search"></i></button>
+                </form><!-- .flex -->
+            </div><!-- .search-widget -->
+
+            <div class="cat-links">
+                <h2>分类</h2>
+
+                <ul class="p-0 m-0">
+                    {% for category in categories %}
+                        <li><a href="#">{{ category.0 }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div><!-- .cat-links -->
+
+            <div class="latest-courses">
+                <h2>最新课程</h2>
+
+                <ul class="p-0 m-0">
+                    {% for hot_course in hot_courses %}
+                        <li class="flex flex-wrap justify-content-between align-items-center">
+                            <a href="{% url 'course:course_detail' hot_course.id %}">
+                                <img width="84" height="84" class="scrollLoading"
+                                     src="{{ MEDIA_URL }}{{ hot_course.image }}"/>
+                            </a>
+
+
+                            <div class="content-wrap">
+                                <h3>
+                                    <a href="{% url 'course:course_detail' hot_course.id %}">{{ hot_course.learn_times }}小时</a>
+                                </h3>
+
+                                <div class="course-cost free-cost">{{ hot_course.teacher.name }}</div>
+                            </div><!-- .content-wrap -->
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div><!-- .latest-courses -->
+
+            <div class="ads">
+                <img src="{% static 'images/ads.jpg' %}" alt="">
+            </div><!-- .ads -->
+
+            <div class="popular-tags">
+                <h2>标签</h2>
+
+                <ul class="flex flex-wrap align-items-center p-0 m-0">
+                    {% for tag in tags %}
+                        <li><a href="#">{{ tag.0 }}</a></li>
+                    {% endfor %}
+
+                </ul>
+            </div><!-- .popular-tags -->
+        </div><!-- .sidebar -->
+    </div><!-- .col -->
+</div><!-- .row -->
+
+{% endblock %}

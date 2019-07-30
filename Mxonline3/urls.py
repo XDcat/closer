@@ -24,6 +24,7 @@ import xadmin
 from django.views.generic import TemplateView
 # from users.views import user_login
 from Mxonline3.settings import MEDIA_ROOT
+from about.views import AboutView, ContactView, MapView
 from organization.views import OrgView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, \
     IndexView
@@ -70,4 +71,7 @@ urlpatterns = [
 
     # 富文本相关url
     path('ueditor/', include('DjangoUeditor.urls')),
+    path('about/', AboutView.as_view(), name="about"),
+    path('contact/', ContactView.as_view(), name="contact"),
+    path('map/', MapView.as_view(), name="map"),
 ]

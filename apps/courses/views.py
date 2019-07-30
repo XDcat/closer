@@ -12,8 +12,15 @@ from operation.models import UserFavorite, CourseComments, UserCourse
 class CourseListView(View):
     def get(self, request):
         all_course = Course.objects.all()
+        # 修改老师名称
+        # for i_course in all_course:
+        #     i_course[]
+        # 分类情况
+        categories = Course.objects.values_list('category').distinct()
+        # 标签情况
+        tags = Course.objects.values_list('tag').distinct()
         # 热门课程推荐
-        hot_courses = Course.objects.all().order_by("-students")[:3]
+        hot_courses = Course.objects.all().order_by("-students")[:5]
         # 搜索功能
         search_keywords = request.GET.get('keywords', '')
         if search_keywords:
@@ -38,11 +45,13 @@ class CourseListView(View):
         # 这里指从all_org中取五个出来，每页显示5个
         p = Paginator(all_course, 6, request=request)
         courses = p.page(page)
-        return render(request, "course-list.html", {
+        return render(request, "course-list-new.html", {
             "all_course": courses,
             "sort": sort,
             "hot_courses": hot_courses,
-            "search_keywords": search_keywords
+            "search_keywords": search_keywords,
+            "categories": categories,
+            "tags": tags
         })
 
 
@@ -77,7 +86,7 @@ class CourseDetailView(View):
             relate_courses = Course.objects.filter(tag=tag)[1:2]
         else:
             relate_courses = []
-        return render(request, "course-detail.html", {
+        return render(request, "single-courses.html", {
             "course": course,
             "relate_courses": relate_courses,
             "has_fav_course": has_fav_course,

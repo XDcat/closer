@@ -1,0 +1,222 @@
+{% extends 'base-new.html' %}
+{% load staticfiles %}
+{% block titile %} About | Birdge {% endblock %}
+{% block kind %}about-page{% endblock %}
+{% block subtitle %}About Us{% endblock %}
+{% block address %}About{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="about-heading">
+                <h2 class="entry-title">欢迎来到Bridge </h2>
+                <p>一个传播教育及思想的平台</p>
+            </div><!-- .about-heading -->
+        </div><!-- .col -->
+        <!-- .col -->
+
+        <div class="col-12 ">
+            <div class="about-values">
+                <h3>我们的故事：</h3>
+                <p>
+                    我们是来自天南海北的四条“锦鲤”，寄希望于通过Bridge这个平台尽可能地将目前先进教育及思想传播到每一个人的心中。Bridge通过与院校社团，以及当地政府机构的合作，为改善教育不平等问题提供可行性方案。为乡村教师减轻教学负担，为乡村学生提供先进的思维，并且对大学生的思想进行学校所不能提供的教育，让大学生在课外之余投身乡村教育事业，并与乡村学生进行沟通，为乡村学生的成长提供帮助<br>
+                </p>
+                <!-- .green-ticked -->
+            </div><!-- .about-values -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+    </div><!-- .container -->
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 align-content-lg-stretch">
+                    <header class="heading">
+                        <h2 class="entry-title">关于 Bridge</h2>
+                        <p>希望我们的网站，可以从一个个点扩散到一个面，去提高乡村的教育质量，缓解中国目前严峻的教育不平等问题</p>
+                        <p>未来3年的愿景：<br>
+                        </p>
+                    </header>
+                    <!-- .heading -->
+
+                    <div class="entry-content ezuca-stats">
+                        <div class="stats-wrap flex flex-wrap justify-content-lg-between">
+                            <div class="stats-count"> 50<span>+</span>
+                                <p>合作院校<br>
+                                </p>
+                            </div><!-- .stats-count -->
+
+                            <div class="stats-count">200<span>+</span>
+                                <p>大学生讲师</p>
+                            </div><!-- .stats-count -->
+
+                            <div class="stats-count"> 50<span>+</span>
+                                <p>审查老师</p>
+                            </div><!-- .stats-count -->
+
+                            <div class="stats-count">10000<span>+</span>
+                                <p> 受益人数</p>
+                            </div><!-- .stats-count -->
+                        </div><!-- .stats-wrap -->
+                    </div><!-- .ezuca-stats -->
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-6 flex align-content-center mt-5 mt-lg-0">
+                    <div class="ezuca-video position-relative">
+                        <div class="video-play-btn position-absolute">
+                            <img src="{% static 'images/video-icon.png' %}" alt="Video Play">
+                        </div><!-- .video-play-btn -->
+
+                        <img src="{% static 'images/about1.jpg' %}" alt="">
+                    </div><!-- .ezuca-video -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .about-section -->
+
+    <section class="testimonial-section">
+        <!-- Swiper -->
+        <div class="swiper-container testimonial-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 order-2 order-lg-1 flex align-items-center mt-5 mt-lg-0">
+                                <figure class="user-avatar">
+                                    <img src="{% static 'images/user-1.jpg' %}" alt="">
+                                </figure><!-- .user-avatar -->
+                            </div><!-- .col -->
+
+                            <div class="col-12 col-lg-6 order-1 order-lg-2 content-wrap h-100">
+                                <div class="entry-content">
+                                    <p>Together as teachers, students and universities we can help make this education available for everyone.</p>
+                                </div><!-- .entry-content -->
+
+                                <div class="entry-footer">
+                                    <h3 class="testimonial-user">Russell Stephens - <span>University in UK</span></h3>
+                                </div><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .swiper-slide -->
+
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 order-2 order-lg-1 flex align-items-center mt-5 mt-lg-0">
+                                <figure class="user-avatar">
+                                    <img src="{% static 'images/user-2.jpg' %}" alt="">
+                                </figure><!-- .user-avatar -->
+                            </div><!-- .col -->
+
+                            <div class="col-12 col-lg-6 order-1 order-lg-2 content-wrap h-100">
+                                <div class="entry-content">
+                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div><!-- .entry-content -->
+
+                                <div class="entry-footer">
+                                    <h3 class="testimonial-user">Robert Stephens - <span>University in Oxford</span></h3>
+                                </div><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .swiper-slide -->
+
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 flex order-2 order-lg-1 align-items-center mt-5 mt-lg-0">
+                                <figure class="user-avatar">
+                                    <img src="{% static 'images/user-3.jpg' %}" alt="">
+                                </figure><!-- .user-avatar -->
+                            </div><!-- .col -->
+
+                            <div class="col-12 col-lg-6 order-1 order-lg-2 content-wrap h-100">
+                                <div class="entry-content">
+                                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                                </div><!-- .entry-content -->
+
+                                <div class="entry-footer">
+                                    <h3 class="testimonial-user">James Stephens - <span>University in Cambridge</span></h3>
+                                </div><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .swiper-slide -->
+            </div><!-- .swiper-wrapper -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                        <div class="swiper-pagination position-relative flex justify-content-center align-items-center"></div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .testimonial-slider -->
+    </section><!-- .testimonial-section -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="team-heading">
+                    <h2 class="entry-title">我们的开发团队</h2>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                </div><!-- .team-heading -->
+            </div><!-- .col -->
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="team-member">
+                    <img src="{% static 'images/user_1.jpg' %}" alt="">
+                    <h3>张震宇</h3>
+                    <h4>团队组织</h4>
+                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div><!-- .team-member -->
+            </div><!-- .col -->
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="team-member">
+                    <img src="{% static 'images/user_2.jpeg' %}" alt="">
+                    <h3>杨铮</h3>
+                    <h4>数据分析</h4>
+                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div><!-- .team-member -->
+            </div><!-- .col -->
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="team-member">
+                    <img src="{% static 'images/user_3.jpg' %}" alt="">
+                    <h3>汪青瑶 </h3>
+                    <h4>商业策划</h4>
+                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div><!-- .team-member -->
+            </div><!-- .col -->
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="team-member">
+                    <img src="{% static 'images/user_4.jpg' %}" alt="">
+
+                    <h3>曾连杰 </h3>
+                    <h4>网站搭建 CSS</h4>
+
+                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div><!-- .team-member -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+{% endblock %}

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'captcha',
     'pure_pagination',
     'DjangoUeditor',
+    'about',
 ]
 # 此处重载是为了使我们的UserProfile生效
 AUTH_USER_MODEL = "users.UserProfile"
@@ -92,9 +93,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline3',
-        'USER': 'deqin',
-        'PASSWORD': 'JffxacnYLXdcDPL4',
-        'HOST': '132.232.30.57'
+        'USER': 'root',
+        'PASSWORD': '000407',
+        'HOST': '127.0.0.1'
 
     }
 }
